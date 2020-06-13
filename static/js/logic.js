@@ -28,25 +28,23 @@ function onEachFeature(feature, layer) {
 function setRadius(mag){
 
   switch(true){
-    case (mag < 3.5):
-      //console.log("Yes")
+    case (mag <= 1) :
       return 5;
       break;
-    case (mag < 5.5):
-      //console.log("Yes2")
+    case (mag <= 2):
       return 10;
       break;
-    case (mag < 7.5):
-      //console.log("Yes3")
+    case (mag <= 3):
       return 15;
       break;
-    case (mag <= 9.5):
-      //console.log("Yes4")
+    case (mag <= 4):
       return 20;
       break;
-    default:
-      //console.log("Yes5")
+    case (mag <= 5):
       return 25;
+      break;
+    default:
+      return 30;
   }
 }
 
@@ -54,22 +52,22 @@ function setColor(mag){
 
   switch(true){
     case (mag <= 1):
-      return "#FEBA05";
+      return "#FFBA08";
       break;
     case (mag <= 2):
-      return "#FCA102";
+      return "#F48C06";
       break;
     case (mag <= 3):
-      return "#EF8000";
+      return "#DC2F02";
       break;
     case (mag <= 4):
-      return "#FA0C08";
+      return "#9D0208";
       break;
     case (mag <= 5):
-      return "#E00001";
+      return "#6A040F";
       break;
     default:
-      return "#C80004"
+      return "#370617"
   }
 }
 
